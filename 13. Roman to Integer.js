@@ -3,7 +3,6 @@
  * @return {number}
  */
 var romanToInt = function (s) {
-    // console.log(s.length)
     const mapper = {
         'I': 1,
         'V': 5,
@@ -14,7 +13,7 @@ var romanToInt = function (s) {
         'M': 1000,
     }
     let total = 0;
-    if (s.length <= 15 && s.length >= 1) { //MCMXCIV
+    if (s.length <= 15 && s.length >= 1) {
         for (let i = 0; i < s.length; i++) {
             if (i >= s.length - 1 || mapper[s[i]] >= mapper[s[i + 1]]) {
                 total = total + mapper[s[i]]
@@ -23,7 +22,6 @@ var romanToInt = function (s) {
                 total = total + temp
                 i += 1
             }
-            // console.log(i, s[i], mapper[s[i]], mapper[s[i + 1]], total)
         }
         console.log(total)
         return total
